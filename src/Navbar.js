@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom'
 
 import styled from "styled-components";
 
@@ -27,14 +28,18 @@ const Wrapper = styled.div`
 `;
 
 const Navbar = () => {
+  let navigate = useNavigate()
+
   return (
     <Wrapper>
       <div>
-        <a href="/">Home</a>
+        <p onClick={() => navigate('/')}>Home</p>
       </div>
-      <div>About</div>
       <div>
-        <a href="/portfolio">Portfolio</a>
+        <p onClick={() => navigate('/about')}>About</p>
+      </div>
+      <div>
+        <p onClick={() => navigate('/portfolio')}>Portfolio</p>
       </div>
       <div>Contact</div>
     </Wrapper>
