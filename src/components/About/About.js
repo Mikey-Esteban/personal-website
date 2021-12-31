@@ -116,17 +116,17 @@ const About = () => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <p>As much as I love it, as a career it is not only (obviously) extremely difficult but I found myself yearning for
-          something more intellectually stimulating. I started dabbling with programming around the summer of
-          2017, and even took a data science bootcamp from Rutgers University in 2019. At then end of that bootcamp
-          though I knew that the data science industry wasn't my cup of tea, and along with many people during the pandemic
-          (and just out of dance work from a North American Tour),
+        <p>As much as I love it I found myself yearning for something more intellectually stimulating.
+          I started programming the summer of 2017, and completed a data science bootcamp from Rutgers University in 2019.
+          Afterwards I realized data science wasn't my cup of tea, and during the pandemic
+          (and just out of dance work from a North American Tour),</p>
           <GifWrapper><img src={ericnamGif} alt="Mikey dancing in Chicago"/></GifWrapper>
-        I found myself with a lot of time on my hands.</p>
+          <p>I dove head first into web development.</p>
       </SectionWrapper>
 
       <SectionWrapper>
-        <p>I give a lot of credit to <a href="https://www.theodinproject.com/">The Odin Project</a> for jumpstarting my web development career. I've found that I truly love problem solving, and the persistence and determination needed
+        <p>I give a lot of credit to <a href="https://www.theodinproject.com/">The Odin Project</a> for jumpstarting my web development career.
+        I've found that I truly love problem solving, and the persistence and determination needed
         to become a better developer are traits I aspire to continually cultivate.</p>
 
         <p>Please free free to check out some of my
