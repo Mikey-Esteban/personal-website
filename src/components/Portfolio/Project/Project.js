@@ -21,12 +21,57 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .image {
+    margin-top: 1rem;
+    position: relative;
+    width: 480px;
+  }
+
   .description {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     letter-spacing: .05rem;
+
+    position: absolute;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.9);
+    font-size: .8rem;
+    opacity: 1;
+    transition: all ease-in-out 150ms;
+  }
+
+  .description:hover {
+    opacity: 0;
   }
 `
+
+const StackWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+
+  h6 {
+    margin: 1rem 0;
+  }
+
+  .frontend, .backend {
+    display: flex;
+    flex-direction: column;
+  }
+`
+
 const IconsWrapper = styled.div`
   display: flex;
   gap: 5px;
@@ -40,44 +85,59 @@ const ImageWrapper = styled.div`
 
 const Project = ({props}) => {
   const {
-    id, descriptionText1,
+    title, id, descriptionText1,
     descriptionText2, descriptionText3,
-    stack, imgSrc, imgAlt,
+    frontendStack, backendStack, imgSrc, imgAlt,
     handleGoToApp, handleGoToGithub
   } = props
 
   const iconLegend = {
-    'html5': <Html5 size={24} color={'#e34c26'} />,
-    'css': <Csswizardry size={24} color={'#4169e1'} />,
-    'js': <Javascript size={24} color={'#F0DB4F'} />,
-    'react': <ReactLogo size={24} color={'#61DBFB'} />,
-    'ruby': <Ruby size={24} color={'#A91401'} />,
-    'rails': <Rubyonrails size={24} color={'#CC0000'} />,
-    'postgres': <Postgresql size={24} color={'#008bb9'}/>,
-    'python': <Python size={24} color={'#4B8BBE'} />,
-    'flask': <Flask size={24} />,
-    'raspberryPi': <Raspberrypi size={24} color={'#C51A4A'} />
+    'html5': <Html5 key={'html5'} size={24} color={'#e34c26'} />,
+    'css': <Csswizardry key={'css'} size={24} color={'#4169e1'} />,
+    'js': <Javascript key={'js'} size={24} color={'#F0DB4F'} />,
+    'react': <ReactLogo key={'react'} size={24} color={'#61DBFB'} />,
+    'ruby': <Ruby key={'ruby'} size={24} color={'#A91401'} />,
+    'rails': <Rubyonrails key={'rails'} size={24} color={'#CC0000'} />,
+    'postgres': <Postgresql key={'postgres'} size={24} color={'#008bb9'}/>,
+    'python': <Python key={'python'} size={24} color={'#4B8BBE'} />,
+    'flask': <Flask key={'flask'} size={24} />,
+    'raspberryPi': <Raspberrypi key={'raspberryPi'} size={24} color={'#C51A4A'} />
   }
 
-  let icons = stack.map(item => iconLegend[item])
+  let frontendIcons = frontendStack.map(item => iconLegend[item])
+  let backendIcons = backendStack.map(item => iconLegend[item])
 
   return (
     <Wrapper id={id} >
-      <hr/>
-      <h6>Stack</h6>
-      <IconsWrapper>
-        {icons}
-      </IconsWrapper>
-      <hr/>
-      <div className="description">
-        <p>{descriptionText1}</p>
-        <p>{descriptionText2}</p>
-        <p>{descriptionText3}</p>
-      </div>
+      <h1>{title}</h1>
 
-      <ImageWrapper>
-        <img src={imgSrc} alt={imgAlt} />
-      </ImageWrapper>
+      <StackWrapper>
+        <div className="frontend">
+          <h6>Frontend Stack</h6>
+          <IconsWrapper>
+            {frontendIcons}
+          </IconsWrapper>
+        </div>
+        { backendIcons.length > 0 &&
+          <div className="backend">
+            <h6>Backend Stack</h6>
+            <IconsWrapper>
+              {backendIcons}
+            </IconsWrapper>
+          </div>
+        }
+      </StackWrapper>
+
+      <div className="image">
+        <div className="description">
+          <p>{descriptionText1}</p>
+          <p>{descriptionText2}</p>
+          <p>{descriptionText3}</p>
+        </div>
+        <ImageWrapper>
+          <img src={imgSrc} alt={imgAlt} />
+        </ImageWrapper>
+      </div>
 
       <div className="container">
         <div className="btn btn-one" onClick={handleGoToApp}>

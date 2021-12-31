@@ -4,6 +4,8 @@
 :root {
   --offwhite: darken(white, 10%);
   --darkblue: rgb(50, 50, 60);
+  --maingray: #c1c1c4;
+  --red: #e34c26;
 }
 
 *,
@@ -21,4 +23,5 @@ body {
   background-color: var(--darkblue);
   color: white;
   height: 100vh;
+  min-width: 400px;
 }

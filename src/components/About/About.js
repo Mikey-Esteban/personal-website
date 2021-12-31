@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 import ericnamGif from '../../assets/ericnam.gif'
 import mooncultureGif from '../../assets/moonculture.gif'
@@ -15,14 +16,36 @@ const Wrapper = styled.div`
 
   a {
     text-decoration: none;
-    color: #e34c26;
+    color: var(--red);
     font-weight: 600;
   }
 `
 const SectionWrapper = styled.div`
   max-width: 500px;
+  min-width: 400px;
+
+  .projects {
+    color: var(--red);
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width: 550px) {
+    margin: 0 1rem;
+  }
+
+  @media only screen and (max-width: 425px) {
+    margin: 0;
+    width: 380px;
+    font-size: .9rem;
+
+    p {
+      padding: 1rem;
+      letter-spacing: .08rem;
+    }
+  }
 `
-const GifWrapper = styled.div`
+const GifWrapper = styled.span`
   img {
     width: 400px;
   }
@@ -30,7 +53,6 @@ const GifWrapper = styled.div`
 
 const ImageWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
 
   img {
     display: block;
@@ -39,7 +61,7 @@ const ImageWrapper = styled.div`
 
   .image {
     position: relative;
-    width: 180px;
+    width: 200px;
   }
 
   .image__overlay {
@@ -53,6 +75,7 @@ const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
+    font-size: .8rem;
     opacity: 1;
     transition: all ease-in-out 150ms;
   }
@@ -63,6 +86,8 @@ const ImageWrapper = styled.div`
 `
 
 const About = () => {
+  const navigate = useNavigate()
+
   return (
     <Wrapper>
       <h3>I love creating.</h3>
@@ -101,8 +126,15 @@ const About = () => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <p>I give a lot of credit to <a href="https://www.theodinproject.com/">The Odin Project</a> for jumpstarting my web development career. I've found that I truly love problem solving, and the persistence and determination one needs
+        <p>I give a lot of credit to <a href="https://www.theodinproject.com/">The Odin Project</a> for jumpstarting my web development career. I've found that I truly love problem solving, and the persistence and determination needed
         to become a better developer are traits I aspire to continually cultivate.</p>
+
+        <p>Please free free to check out some of my
+          <span className="projects" onClick={() => navigate('/portfolio')}> projects </span>
+          or
+          <a href="https://github.com/Mikey-Esteban"> github</a>
+          .
+        </p>
       </SectionWrapper>
     </Wrapper>
   )
