@@ -41,7 +41,7 @@ const Portfolio = () => {
     handleGoToGithub: handleGoToGithub('https://github.com/Mikey-Esteban/chess-app-frontend')
   }
 
-  const coffeeShop = {
+  const coffeeShopProps = {
     title: 'Coffee Shop',
     id: 'coffee-shop',
     descriptionText1: "A business site mock up for an imaginary coffee shop. Frontend built with React and styled through Styled Components. \
@@ -81,6 +81,7 @@ const Portfolio = () => {
 
   return (
     <Wrapper>
+      <Project props={coffeeShopProps} />
       <Project props={chessProps} />
       <Project props={waldoProps} />
       <Project props={weatherProps} />
