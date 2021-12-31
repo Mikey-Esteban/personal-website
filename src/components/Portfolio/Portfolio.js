@@ -10,7 +10,11 @@ import weatherGif from "../../assets/weather-app.gif";
 import Project from './Project/Project'
 
 const Wrapper = styled.div`
-  width: 100%;
+  border-top: 2px solid white;
+  padding-top: 3rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;

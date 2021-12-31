@@ -5,6 +5,7 @@ import "./App.css";
 import ScrollToTop from './helpers/ScrollToTop'
 
 import {
+  Main,
   Welcome,
   About,
   Portfolio,
@@ -18,6 +19,7 @@ const App = () => {
       <Navbar />
       <ScrollToTop>
         <Routes>
+          <Route exact path="/" element={<Main />} />
           <Route exact path="/portfolio" element={<Portfolio />} />
           <Route exact path="/about" element={<About />} />
           <Route path="/" element={<Welcome />} />

@@ -13,11 +13,29 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 4rem;
 
   a {
     text-decoration: none;
     color: var(--red);
     font-weight: 600;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .fadeIn {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
   }
 `
 const SectionWrapper = styled.div`
@@ -90,7 +108,7 @@ const About = () => {
 
   return (
     <Wrapper>
-      <h3>I love creating.</h3>
+      <h1 id="iLoveCreating" className="hide">I love creating.</h1>
 
       <SectionWrapper>
         <p>In college I found one of my true passions, dance.</p>
