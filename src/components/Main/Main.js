@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Welcome from '../Welcome/Welcome'
 import About from '../About/About'
 import Portfolio from '../Portfolio/Portfolio'
+import Contact from '../Contact/Contact'
 
 
 const Main = () => {
@@ -44,6 +45,7 @@ const Main = () => {
       <Welcome />
       <About />
       <Portfolio />
+      <Contact />
     </>
   )
 }

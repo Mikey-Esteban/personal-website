@@ -13,13 +13,14 @@ const Wrapper = styled.div`
   width: 100%;
   height: 40px;
   padding-top: 5px;
+  padding-right: 5px;
 
   color: white;
   font-weight: 600;
   font-style: normal;
 
   * {
-    margin: 0 5px;
+    margin: 0 6px;
 
     cursor: pointer;
   }

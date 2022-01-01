@@ -83,16 +83,17 @@ const Wrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  margin-left: 6rem;
+  position: absolute;
+  top: 10%;
+  left: 20%;
   border: 8px solid white;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  position: relative;
   overflow: hidden;
 
   img {
-    width: 180px;
+    width: 200px;
   }
 `
 

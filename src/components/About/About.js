@@ -60,7 +60,7 @@ const SectionWrapper = styled.div`
 
     p {
       padding: 1rem;
-      letter-spacing: .08rem;
+      letter-spacing: .09rem;
     }
   }
 `
