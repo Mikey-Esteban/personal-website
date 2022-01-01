@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  padding-top: 3rem;
   min-height: calc(100vh - 80px);
   width: 100%;
   font-weight: 900;
@@ -82,7 +83,7 @@ const Wrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  margin-left: 3rem;
+  margin-left: 6rem;
   border: 8px solid white;
   width: 180px;
   height: 180px;
@@ -104,7 +105,7 @@ const Welcome = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <ImageWrapper>
         <img src="/assets/images/mikeySideview.jpg" alt="Mikey smiling"/>
       </ImageWrapper>

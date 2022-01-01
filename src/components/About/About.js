@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
 import ericnamGif from '../../assets/ericnam.gif'
-import mooncultureGif from '../../assets/moonculture.gif'
+import mooncultureGif from '../../assets/mooncultureSmall.gif'
 import abdcPic from '../../assets/abdc4.jpg'
 import hzChina from '../../assets/hzChina.jpg'
 
 
 const Wrapper = styled.div`
+  padding-top: 3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -107,7 +108,7 @@ const About = () => {
   const navigate = useNavigate()
 
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <h1 id="iLoveCreating" className="hide">I love creating.</h1>
 
       <SectionWrapper>

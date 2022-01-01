@@ -84,7 +84,7 @@ const Portfolio = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="portfolio">
       <Project props={coffeeShopProps} />
       <Project props={chessProps} />
       <Project props={waldoProps} />
