@@ -2,6 +2,7 @@ import React from "react";
 import "./Portfolio.css";
 import styled from "styled-components";
 
+import clientWebsiteGif from '../../assets/caityn-marr-website.gif'
 import chessAppGif from '../../assets/chess-app.gif';
 import coffeeshopGif from '../../assets/coffeeshop.gif';
 import wheresWaldoGif from "../../assets/wheres-waldo.gif";
@@ -26,6 +27,20 @@ const Portfolio = () => {
 
   const handleGoToApp = url => () => window.location = url
   const handleGoToGithub = url => () => window.location = url
+
+  const clientWebsiteProps = {
+    title: 'Client Website',
+    'id': 'client-website',
+    descriptionText1: "A responsive actor website I made for a client. Some functionalities include \
+    being able to send a message via email to the client directly on site and hooking up the Instagram Basic Display API to show current posts. \
+    Frontend built with React and styled through Styled Components. Backend build with Rails and a Postgres Database to hold the instagram posts.",
+    frontendStack: ['html5', 'css', 'js', 'react'],
+    backendStack: ['ruby', 'rails', 'postgres'],
+    imgSrc: clientWebsiteGif,
+    imgAlt: 'client website gif',
+    handleGoToApp: handleGoToApp('https://caitlyn-marr-one-pager.netlify.app/'),
+    handleGoToGithub: handleGoToGithub('https://github.com/Mikey-Esteban/caitlyn-marr-website')
+  }
 
   const chessProps = {
     title: 'Chess',
@@ -85,6 +100,7 @@ const Portfolio = () => {
 
   return (
     <Wrapper id="portfolio">
+      <Project props={clientWebsiteProps} />
       <Project props={coffeeShopProps} />
       <Project props={chessProps} />
       <Project props={waldoProps} />
