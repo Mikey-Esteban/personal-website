@@ -2,14 +2,26 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { GithubWithCircle as Github } from '@styled-icons/entypo-social/GithubWithCircle';
+import { LinkedinWithCircle as Linkedin } from '@styled-icons/entypo-social/LinkedinWithCircle';
+import { MailWithCircle as Mail } from '@styled-icons/entypo-social/MailWithCircle';
+import { InstagramWithCircle as Instagram } from '@styled-icons/entypo-social/InstagramWithCircle';
+
 const Wrapper = styled.div`
-  padding-top: 3rem;
-  min-height: calc(100vh - 80px);
   width: 100%;
+  min-width: 480px;
+  min-height: calc(100vh - 80px);
+
+  padding-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
   font-weight: 900;
   font-style: italic;
 
-  display: flex;
 
   #myName {
     position: absolute;
@@ -71,7 +83,7 @@ const Wrapper = styled.div`
   #attributesTag {
     position: absolute;
     left: 35%;
-    top: 65%;
+    top: 60%;
 
     color: white;
     font-size: 18px;
@@ -79,6 +91,16 @@ const Wrapper = styled.div`
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 1s linear;
+  }
+
+  #socials {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #socials > * {
+    cursor: pointer;
   }
 `;
 
@@ -93,6 +115,7 @@ const ImageWrapper = styled.div`
   overflow: hidden;
 
   img {
+    cursor: pointer;
     width: 200px;
   }
 `
@@ -105,16 +128,26 @@ const Welcome = () => {
     tag.style.opacity = 1;
   };
 
+  const handleGoTo = (location) => {
+    document.querySelector(`#${location}`).scrollIntoView({behavior: 'smooth'})
+  }
+
   return (
     <Wrapper id="home">
       <ImageWrapper>
-        <img src="/assets/images/mikeySideview.jpg" alt="Mikey smiling"/>
+        <img src="/assets/images/mikeySideview.jpg" alt="Mikey smiling" onClick={() => handleGoTo('portfolio')}/>
       </ImageWrapper>
-      <span id="myName" onMouseOver={handleMouseOver}>
+      <span id="myName" onMouseOver={handleMouseOver} onClick={() => handleGoTo('about')}>
         Mikey
       </span>
       <span id="attributesTag">
         web developer, retired dancer, and aspiring chess geek :)
+      </span>
+      <span id="socials">
+        <Github size={30} />
+        <Linkedin size={30} />
+        <Mail size={30} />
+        <Instagram size={30} />
       </span>
     </Wrapper>
   );

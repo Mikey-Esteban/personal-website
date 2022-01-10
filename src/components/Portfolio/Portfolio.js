@@ -2,7 +2,7 @@ import React from "react";
 import "./Portfolio.css";
 import styled from "styled-components";
 
-import clientWebsiteGif from '../../assets/caityn-marr-website.gif'
+import clientWebsiteGif from '../../assets/caitlyn-marr-website.gif';
 import chessAppGif from '../../assets/chess-app.gif';
 import coffeeshopGif from '../../assets/coffeeshop.gif';
 import wheresWaldoGif from "../../assets/wheres-waldo.gif";

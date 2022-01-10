@@ -114,28 +114,23 @@ const About = () => {
       <SectionWrapper>
         <p>In college I found one of my true passions, dance.</p>
          <GifWrapper><img src={mooncultureGif} alt="Mikey dancing gif"/></GifWrapper>
+         <ImageWrapper>
+           <div className="image">
+             <img className="image__img" src={abdcPic} alt="Fr3sh on ABDC Season 4"/>
+             <div className="image__overlay">
+               <p className="image__description">Fr3sh on MTV's America's Best Dance Crew</p>
+             </div>
+           </div>
+           <div className="image">
+             <img src={hzChina} alt="Mikey dancing in Hangzhou, China"/>
+             <div className="image__overlay">
+               <p className="image__description">Par club in Hangzhou, China</p>
+             </div>
+           </div>
+         </ImageWrapper>
          <p>With a lot of work and extremely supportive parents, I was able to spend my 20s
           traveling all over the world and experience things I never dreamed of.</p>
-          <ImageWrapper>
-            <div className="image">
-              <img className="image__img" src={abdcPic} alt="Fr3sh on ABDC Season 4"/>
-              <div className="image__overlay">
-                <p className="image__description">Fr3sh on MTV's America's Best Dance Crew</p>
-              </div>
-            </div>
-            <div className="image">
-              <img src={hzChina} alt="Mikey dancing in Hangzhou, China"/>
-              <div className="image__overlay">
-                <p className="image__description">Par club in Hangzhou, China</p>
-              </div>
-            </div>
-
-
-          </ImageWrapper>
-      </SectionWrapper>
-
-      <SectionWrapper>
-        <p>As much as I love it I found myself yearning for something more intellectually stimulating.
+         <p>As much as I love it I found myself yearning for something more intellectually stimulating.
           I started programming the summer of 2017, and completed a data science bootcamp from Rutgers University in 2019.
           Afterwards I realized data science wasn't my cup of tea, and during the pandemic
           (and just out of dance work from a North American Tour),</p>

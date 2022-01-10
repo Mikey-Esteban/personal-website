@@ -21,10 +21,10 @@ const Wrapper = styled.div`
 const Footer = () => {
   return (
     <Wrapper>
-      <p>musing-meninsky-9964de.netlify.app</p>
+      <p>mikey-esteban.netlify.app</p>
       <p>732 770 0767</p>
       <p>michaelp.esteban@gmail.com</p>
-      <p>instagram</p>
+      <p>@mikeyesteban.design</p>
     </Wrapper>
   )
 }

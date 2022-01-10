@@ -5,7 +5,7 @@ import Portfolio from '../Portfolio/Portfolio'
 import Contact from '../Contact/Contact'
 
 
-const Main = () => {
+const Main = ({showContactCTA}) => {
 
   // useState for Window height value
   const [ windowHeight, setWindowHeight ] = useState(null)
@@ -45,7 +45,7 @@ const Main = () => {
       <Welcome />
       <About />
       <Portfolio />
-      <Contact />
+      <Contact showContactCTA={showContactCTA} />
     </>
   )
 }

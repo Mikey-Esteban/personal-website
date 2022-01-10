@@ -44,7 +44,9 @@ const Navbar = () => {
       <div>
         <a href="#portfolio">Portfolio</a>
       </div>
-      <div>Contact</div>
+      <div>
+        <a href="#contact">Contact</a>
+      </div>
     </Wrapper>
   );
 };
