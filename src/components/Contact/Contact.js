@@ -4,12 +4,12 @@ import Form from './Form/Form'
 import CTA from './CTA/CTA'
 
 const Wrapper = styled.div`
-  padding-top: 3rem;
+  padding-top: 4rem;
   margin-bottom: 4rem;
   display: flex;
   justify-content: center;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
     gap: 2rem;
     align-items: center;

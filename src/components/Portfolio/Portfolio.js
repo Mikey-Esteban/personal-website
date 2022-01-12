@@ -12,7 +12,7 @@ import Project from './Project/Project'
 
 const Wrapper = styled.div`
   border-top: 2px solid white;
-  padding-top: 3rem;
+  padding-top: 4rem;
   margin: 0 auto;
   margin-bottom: 4rem;
   width: 80%;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 4rem;
 `;
 
 const Portfolio = () => {
@@ -76,7 +76,7 @@ const Portfolio = () => {
   const waldoProps = {
     title: "Where's Waldo?",
     id: 'waldo-app',
-    descriptionText1: "Classic childhood game Where's Waldo. Built with a React front end, Rails backend, and Postgres database to save and record scores.",
+    descriptionText1: "Classic childhood game Where's Waldo. Built with a React Frontend, Rails Backend, and Postgres Database to save and record scores.",
     frontendStack: ['html5', 'css', 'js', 'react'],
     backendStack: ['ruby', 'rails', 'postgres'],
     imgSrc: wheresWaldoGif,

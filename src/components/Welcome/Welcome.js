@@ -22,6 +22,14 @@ const Wrapper = styled.div`
   font-weight: 900;
   font-style: italic;
 
+  .icon:hover {
+    border: 3px solid white;
+    border-radius: 50%;
+    background: white;
+
+    color: var(--darkblue);
+  }
+
 
   #myName {
     position: absolute;
@@ -97,6 +105,7 @@ const Wrapper = styled.div`
     width: 150px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 2rem;
   }
 
   #socials > * {
@@ -106,17 +115,17 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 20%;
   border: 8px solid white;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   overflow: hidden;
 
   img {
     cursor: pointer;
-    width: 200px;
+    width: 220px;
   }
 `
 
@@ -144,10 +153,10 @@ const Welcome = () => {
         web developer, retired dancer, and aspiring chess geek :)
       </span>
       <span id="socials">
-        <Github size={30} />
-        <Linkedin size={30} />
-        <Mail size={30} />
-        <Instagram size={30} />
+        <Github className="icon" size={36} onClick={() => window.open('https://github.com/Mikey-Esteban')}/>
+        <Linkedin className="icon" size={36} onClick={() => window.open('https://www.linkedin.com/in/michael-esteban-49285368/')}/>
+        <Mail className="icon" size={36} onClick={() => window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=michaelp.esteban@gmail.com')}/>
+        <Instagram className="icon" size={36} onClick={() => window.open('https://www.instagram.com/mikeyesteban.design/')}/>
       </span>
     </Wrapper>
   );

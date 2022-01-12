@@ -1,30 +1,21 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom'
 import { StyledMenu } from "./Menu.styled";
 
-const Menu = ({ open, setOpen, redirect }) => {
-  let navigate = useNavigate()
-
+const Menu = ({ open, setOpen }) => {
 
   return (
     <StyledMenu open={open} onClick={() => setOpen(!open)} >
-      <a href="#" onClick={redirect('/about', navigate)}>
+      <a href="#welcome">
+        Home
+      </a>
+      <a href="#about">
         About
       </a>
-      <a href="#" onClick={redirect('/resume', navigate)}>
-        Resume
+      <a href="#portfolio">
+        Porfolio
       </a>
-      <a href="#" onClick={redirect('/gallery', navigate)}>
-        Gallery
-      </a>
-      <a href="#" onClick={redirect('/media', navigate)}>
-        Media
-      </a>
-      <a href="#" onClick={redirect('/contact', navigate)}>
+      <a href="#contact">
         Contact
-      </a>
-      <a href="#" onClick={() => window.open('https://www.instagram.com/caitlynmarr22/')}>
-        Instagram
       </a>
     </StyledMenu>
   );

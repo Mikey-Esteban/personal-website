@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
+import emailjs from 'emailjs-com';
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
@@ -95,6 +96,7 @@ const InputsField = styled.div`
 `
 
 const Form = () => {
+  const form = useRef();
 
   // useState for active input
   const [ activeInput, setActiveInput ] = useState()
@@ -112,23 +114,7 @@ const Form = () => {
     message: null
   })
 
-  useEffect(() => {
-    let inputsNodeList = document.querySelectorAll('.clickableInput')
-    let inputs = Array.from(inputsNodeList)
 
-    inputs.map(input => input.addEventListener('click', youClickedInput))
-
-    const contact = document.querySelector('#contact')
-    contact.addEventListener('click', didYouClickInput)
-  }, [])
-
-  const youClickedInput = () => {
-    console.log('YOU CLICKED AN INPUT');
-  }
-
-  const didYouClickInput = e => {
-    console.log(e.target.classList.contains('clickableInput'));
-  }
 
   const handleInputChange = e => {
     setUserData({...userData, [e.target.name]:e.target.value})
@@ -141,6 +127,7 @@ const Form = () => {
     if (handleValidations()) {
       // sendEmail()
       console.log('i need to send an email');
+      sendEmail()
     }
   }
 
@@ -185,6 +172,16 @@ const Form = () => {
     return true
   }
 
+  const sendEmail = () => {
+    console.log(form.current)
+    emailjs.sendForm('mikey_contact_service', 'mikey_contact_form', form.current, 'user_66gmO7LoQfvP4XghZH8zG')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   const resetInputValues = () => {
     setUserData({
       name: null,
@@ -207,7 +204,7 @@ const Form = () => {
 
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm ref={form} onSubmit={handleSubmit}>
       <div className="field header">
         <h3>Get in touch</h3>
         <p className="error">{formError}</p>

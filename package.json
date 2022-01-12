@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@styled-icons/bootstrap": "^10.34.0",
+    "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/boxicons-solid": "^10.38.0",
+    "@styled-icons/entypo": "^10.34.0",
     "@styled-icons/entypo-social": "^10.34.0",
     "@styled-icons/feather": "^10.34.0",
     "@styled-icons/simple-icons": "^10.45.0",
@@ -12,6 +15,7 @@
     "@testing-library/user-event": "^12.1.10",
     "add": "^2.0.6",
     "axios": "^0.21.1",
+    "emailjs-com": "^3.2.0",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

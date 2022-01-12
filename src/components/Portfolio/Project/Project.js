@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 
   .description {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: .05rem;
 
     position: absolute;

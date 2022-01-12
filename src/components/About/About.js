@@ -9,7 +9,7 @@ import hzChina from '../../assets/hzChina.jpg'
 
 
 const Wrapper = styled.div`
-  padding-top: 3rem;
+  padding-top: 4rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -131,9 +131,8 @@ const About = () => {
          <p>With a lot of work and extremely supportive parents, I was able to spend my 20s
           traveling all over the world and experience things I never dreamed of.</p>
          <p>As much as I love it I found myself yearning for something more intellectually stimulating.
-          I started programming the summer of 2017, and completed a data science bootcamp from Rutgers University in 2019.
-          Afterwards I realized data science wasn't my cup of tea, and during the pandemic
-          (and just out of dance work from a North American Tour),</p>
+          I started programming the summer of 2017 and completed a data science bootcamp from Rutgers University in 2019.
+          Afterwards I realized data science wasn't my cup of tea and just out of dance work from a North American Tour because of the pandemic,</p>
           <GifWrapper><img src={ericnamGif} alt="Mikey dancing in Chicago"/></GifWrapper>
           <p>I dove head first into web development.</p>
       </SectionWrapper>
@@ -144,7 +143,7 @@ const About = () => {
         to become a better developer are traits I aspire to continually cultivate.</p>
 
         <p>Please free free to check out some of my
-          <span className="projects" onClick={() => navigate('/portfolio')}> projects </span>
+          <span className="projects" onClick={() => document.querySelector(`#portfolio`).scrollIntoView({behavior: 'smooth'})}> projects </span>
           or
           <a href="https://github.com/Mikey-Esteban"> github</a>
           .

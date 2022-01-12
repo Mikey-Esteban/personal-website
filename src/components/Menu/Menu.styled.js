@@ -1,22 +1,21 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.nav`
-  margin-top: 80px;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => '#534f4b'};
-  height: calc(100vh - 100px);
+  background: var(--darkblue);
+  height: 100vh;
   width: 100%;
   min-width: 300px;
   text-align: center;
   /* padding: 0 2rem; */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  z-index: 100;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;

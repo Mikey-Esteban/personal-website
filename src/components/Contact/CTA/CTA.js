@@ -33,17 +33,25 @@ const Wrapper = styled.div`
     width: 100%;
   }
   .animated-title > div div {
-    font-size: 5vmin;
+    font-size: 4vmin;
     padding: 2vmin 0;
     position: absolute;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 5vmin;
+    }
   }
   .animated-title > div div span {
     display: block;
   }
   .animated-title > div.text-top {
-    width: 80%;
+    width: 70%;
     border-bottom: 1vmin solid #767676;
     top: 0;
+
+    @media only screen and (max-width: 900px) {
+      width: 80%;
+    }
   }
   .animated-title > div.text-top div {
     animation: showTopText 1s;
@@ -68,10 +76,14 @@ const Wrapper = styled.div`
 
   #small-text {
     display: flex;
-    font-size: 3vmin;
+    font-size: 2vmin;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 3vmin;
+    }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     width: 100%;
 
     .animated-title {

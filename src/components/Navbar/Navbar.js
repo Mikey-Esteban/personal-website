@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   z-index: 10;
   position: fixed;
-  background: rgba(50, 50, 60, 1);
+  background: rgba(73, 72, 83, .8);
   top: 0;
   display: flex;
   justify-content: flex-end;

@@ -6,13 +6,12 @@ import ScrollToTop from './helpers/ScrollToTop'
 
 import {
   Main,
-  Welcome,
-  About,
-  Portfolio,
   Navbar,
   Burger,
+  Menu,
   Footer
 } from './components'
+
 
 const App = () => {
 
@@ -29,11 +28,15 @@ const App = () => {
     let welcome = document.querySelector('#home');
     let about = document.querySelector('#about');
     let portfolio = document.querySelector('#portfolio');
+    let contact = document.querySelector('#contact');
+    let footer = document.querySelector('#footer');
 
-    return welcome.clientHeight + about.clientHeight + portfolio.clientHeight
+    return welcome.clientHeight + about.clientHeight + portfolio.clientHeight - contact.clientHeight- footer.clientHeight
   }
 
   const shouldShowContactCTA = () => {
+    console.log('SCROLL POSITION', window.scrollY);
+    console.log('HEIGHT UNTIL', findHeightUntilContact());
     if (window.scrollY >= findHeightUntilContact()) {
       console.log('YAY IM GONNA SHOW');
       setShowContactCTA(true)
@@ -53,7 +56,14 @@ const App = () => {
   }, [])
 
   const renderNavbar = () => {
-      return isBurgerNavbar ? <Burger /> : <Navbar />
+      return (
+        isBurgerNavbar ?
+        <>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </>
+        : <Navbar />
+      )
   }
 
   return (
@@ -62,9 +72,6 @@ const App = () => {
       <ScrollToTop>
         <Routes>
           <Route exact path="/" element={<Main showContactCTA={showContactCTA} />} />
-          <Route exact path="/portfolio" element={<Portfolio />} />
-          <Route exact path="/about" element={<About />} />
-          <Route path="/" element={<Welcome />} />
         </Routes>
       </ScrollToTop>
       <Footer />
