@@ -1,5 +1,4 @@
 import React from "react";
-
 import styled from "styled-components";
 
 import { GithubWithCircle as Github } from '@styled-icons/entypo-social/GithubWithCircle';
@@ -8,9 +7,11 @@ import { MailWithCircle as Mail } from '@styled-icons/entypo-social/MailWithCirc
 import { InstagramWithCircle as Instagram } from '@styled-icons/entypo-social/InstagramWithCircle';
 
 const Wrapper = styled.div`
+  position: relative;
+  height: 100vh;
   width: 100%;
+  min-height: 800px;
   min-width: 480px;
-  min-height: calc(100vh - 80px);
 
   padding-top: 3rem;
 
@@ -29,7 +30,6 @@ const Wrapper = styled.div`
 
     color: var(--darkblue);
   }
-
 
   #myName {
     position: absolute;
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
     width: 150px;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   #socials > * {
@@ -151,12 +151,6 @@ const Welcome = () => {
       </span>
       <span id="attributesTag">
         web developer, retired dancer, and aspiring chess geek :)
-      </span>
-      <span id="socials">
-        <Github className="icon" size={36} onClick={() => window.open('https://github.com/Mikey-Esteban')}/>
-        <Linkedin className="icon" size={36} onClick={() => window.open('https://www.linkedin.com/in/michael-esteban-49285368/')}/>
-        <Mail className="icon" size={36} onClick={() => window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=michaelp.esteban@gmail.com')}/>
-        <Instagram className="icon" size={36} onClick={() => window.open('https://www.instagram.com/mikeyesteban.design/')}/>
       </span>
     </Wrapper>
   );

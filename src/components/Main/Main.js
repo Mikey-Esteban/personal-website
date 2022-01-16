@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Welcome from '../Welcome/Welcome'
-import About from '../About/About'
 import Portfolio from '../Portfolio/Portfolio'
+import About from '../About/About'
 import Contact from '../Contact/Contact'
 
 
@@ -14,7 +14,6 @@ const Main = ({showContactCTA}) => {
   const grabILoveCreatingTag = () => document.querySelector('#iLoveCreating')
 
   const reportWindowSize = () => {
-    console.log('window resized.. window height is now', window.innerHeight);
     setWindowHeight(windowHeight)
   }
 
@@ -43,8 +42,8 @@ const Main = ({showContactCTA}) => {
   return (
     <>
       <Welcome />
-      <About />
       <Portfolio />
+      <About />
       <Contact showContactCTA={showContactCTA} />
     </>
   )

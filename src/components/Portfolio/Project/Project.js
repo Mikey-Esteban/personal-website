@@ -15,29 +15,29 @@ import { Raspberrypi} from '@styled-icons/simple-icons/Raspberrypi'
 import { Github } from "@styled-icons/feather/Github";
 
 const Wrapper = styled.div`
-  width: 480px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   h1 {
+    font-size: 1.5rem;
     margin-bottom: 0;
   }
 
   .image {
     margin-top: 1rem;
     position: relative;
-    width: 480px;
+    width: 280px;
   }
 
   .description {
-    font-size: 14px;
     font-weight: 400;
     letter-spacing: .05rem;
 
     position: absolute;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,14 +47,22 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.9);
     font-size: .8rem;
-    opacity: 1;
+    opacity: 0;
     transition: all ease-in-out 150ms;
+
+    @media only screen and (min-width: 950px) and (max-width: 1150px) {
+      font-size: .7rem;
+    }
   }
 
   .description:hover {
-    opacity: 0;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .container {
+    width: 280px;
   }
 `
 
@@ -79,11 +87,13 @@ const IconsWrapper = styled.div`
 const ImageWrapper = styled.div`
   img {
     min-width: 200px;
-    max-width: 480px;
+    width: ${(props) => props.main ? '480px' : '280px'};
+    height: 250px;
+    object-fit: cover;
   }
 `;
 
-const Project = ({props}) => {
+const Project = ({props, main}) => {
   const {
     title, id, descriptionText1,
     descriptionText2, descriptionText3,
@@ -141,10 +151,10 @@ const Project = ({props}) => {
 
       <div className="container">
         <div className="btn btn-one" onClick={handleGoToApp}>
-          <span>Check it out!</span>
+          <span className="btn-text">Check it out!</span>
         </div>
         <div className="btn btn-one" onClick={handleGoToGithub}>
-          <span>
+          <span className="btn-text">
             Github <Github size={24} />
           </span>
         </div>

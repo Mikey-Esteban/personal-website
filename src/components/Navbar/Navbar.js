@@ -3,13 +3,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  z-index: 10;
-  position: fixed;
+  position: ${(props) => props.isNavbarFixed ? 'fixed' : 'absolute'};
+
+  z-index: 101;
   background: rgba(73, 72, 83, .8);
-  top: 0;
+  top: ${(props) => props.isNavbarFixed ? '0' : `${props.navbarPosition}px`};
   display: flex;
-  justify-content: flex-end;
-  align-items: start;
+  justify-content: center;
   width: 100%;
   height: 40px;
   padding-top: 5px;
@@ -21,7 +21,6 @@ const Wrapper = styled.div`
 
   * {
     margin: 0 6px;
-
     cursor: pointer;
   }
 
@@ -31,18 +30,18 @@ const Wrapper = styled.div`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({isNavbarFixed, navbarPosition}) => {
+
+  console.log('NAVBAR PROPS', isNavbarFixed);
+  console.log('NAV POSITION', navbarPosition);
 
   return (
-    <Wrapper>
+    <Wrapper isNavbarFixed={isNavbarFixed} navbarPosition={navbarPosition} id="navbar">
       <div>
-        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
       </div>
       <div>
         <a href="#about">About</a>
-      </div>
-      <div>
-        <a href="#portfolio">Portfolio</a>
       </div>
       <div>
         <a href="#contact">Contact</a>

@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 
 import { Coffee } from '@styled-icons/boxicons-solid/Coffee'
+import { GithubWithCircle as Github } from '@styled-icons/entypo-social/GithubWithCircle';
+import { LinkedinWithCircle as Linkedin } from '@styled-icons/entypo-social/LinkedinWithCircle';
+import { MailWithCircle as Mail } from '@styled-icons/entypo-social/MailWithCircle';
+import { InstagramWithCircle as Instagram } from '@styled-icons/entypo-social/InstagramWithCircle';
+import { Phone } from '@styled-icons/bootstrap/Phone'
 
 const Wrapper = styled.div`
   width: 40%;
@@ -74,12 +79,56 @@ const Wrapper = styled.div`
     transform: translate(0, -100%);
   }
 
+  .icon:hover {
+    border: 3px solid white;
+    border-radius: 50%;
+
+    background: white;
+    color: var(--darkblue);
+  }
+
+  #phoneIcon {
+    border: 4px solid white;
+    border-radius: 50%;
+    padding: 5px;
+
+    background: white;
+    color: var(--darkblue);
+  }
+
+  #phoneIcon:hover {
+    background: var(--darkblue);
+    color: white;
+  }
+
+  #socials {
+    position: absolute;
+    bottom: -75px;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+  }
+
+  #socials > * {
+    cursor: pointer;
+  }
+
   #small-text {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     font-size: 2vmin;
 
+    p {
+      margin: 0;
+    }
+
     @media only screen and (max-width: 900px) {
-      font-size: 3vmin;
+      font-size: 2.5vmin;
+    }
+    @media only screen and (max-width: 480px) {
+      font-size: 2.8vmin;
     }
   }
 
@@ -104,9 +153,14 @@ const CTA = () => {
         </div>
         <div className="text-bottom">
           <div id="small-text">
-            I have a soft spot for coffee shops
-            <Coffee size={24} />
+            <p>Lets chat! I have a soft spot for coffee shops <Coffee size={24} /></p>
+            <p>732.770.0767</p>
           </div>
+        </div>
+        <div id="socials">
+          <Github className="icon" color={'white'} size={36} onClick={() => window.open('https://github.com/Mikey-Esteban')}/>
+          <Linkedin className="icon" color={'white'} size={36} onClick={() => window.open('https://www.linkedin.com/in/michael-esteban-49285368/')}/>
+          <Mail className="icon" color={'white'} size={36} onClick={() => window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=michaelp.esteban@gmail.com')}/>
         </div>
       </div>
     </Wrapper>

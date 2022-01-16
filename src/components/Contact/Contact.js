@@ -5,13 +5,13 @@ import CTA from './CTA/CTA'
 
 const Wrapper = styled.div`
   padding-top: 4rem;
-  margin-bottom: 4rem;
+  padding-bottom: 6rem;
   display: flex;
   justify-content: center;
 
   @media only screen and (max-width: 900px) {
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
     align-items: center;
   }
 `

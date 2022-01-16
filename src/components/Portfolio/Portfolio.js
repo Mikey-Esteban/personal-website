@@ -12,45 +12,139 @@ import Project from './Project/Project'
 
 const Wrapper = styled.div`
   border-top: 2px solid white;
-  padding-top: 4rem;
-  margin: 0 auto;
-  margin-bottom: 4rem;
-  width: 80%;
+  border-bottom: 2px solid white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  margin: 0 auto;
+
+  width: 90%;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 4rem; */
+
+  #portfolioWrapper {
+    margin: 0 auto;
+    display: grid;
+    gap: 80px 0;
+    grid-template-columns: repeat(12, 90px);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "a a a a a a b b b b b b"
+      "a a a a a a b b b b b b"
+      "a a a a a a b b b b b b"
+      "c c c c d d d d e e e e"
+      "c c c c d d d d e e e e"
+      "c c c c d d d d e e e e"
+    ;
+
+    @media only screen and (max-width: 1150px) {
+      grid-template-columns: repeat(12, 75px);
+
+      #client-website, #coffee-shop {
+        width: 400px;
+
+        .container, .image {
+          width: 300px;
+        }
+        img {
+          width: 300px;
+          object-fit: cover;
+        }
+      }
+
+      #chess-app, #waldo-app, #weather-app {
+        width: 300px;
+
+        .container, .image {
+          width: 240px;
+        }
+        img {
+          width: 240px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 950px) {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      #client-website, #coffee-shop, #chess-app, #waldo-app, #weather-app {
+        width: 300px;
+
+        .container, .image {
+          width: 300px;
+        }
+        img {
+          width: 300px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  #client-website, #coffee-shop {
+    width: 540px;
+
+    .container, .image {
+      width: 400px;
+    }
+    img {
+      width: 400px;
+      object-fit: cover;
+    }
+  }
+
+  #client-website {
+    grid-area: a;
+  }
+  #coffee-shop {
+    grid-area: b;
+  }
+  #chess-app {
+    grid-area: c;
+  }
+  #waldo-app {
+    grid-area: d;
+  }
+  #weather-app {
+    grid-area: e;
+  }
 `;
 
 const Portfolio = () => {
 
-  const handleGoToApp = url => () => window.location = url
-  const handleGoToGithub = url => () => window.location = url
+  const handleGoToApp = url => () => window.open(url)
+  const handleGoToGithub = url => () => window.open(url)
 
   const clientWebsiteProps = {
     title: 'Client Website',
     'id': 'client-website',
-    descriptionText1: "A responsive actor website I made for a client. Some functionalities include \
+    descriptionText1: "A responsive website I made for an actor. Some functionalities include \
     being able to send a message via email to the client directly on site and hooking up the Instagram Basic Display API to show current posts. \
     Frontend built with React and styled through Styled Components. Backend build with Rails and a Postgres Database to hold the instagram posts.",
     frontendStack: ['html5', 'css', 'js', 'react'],
     backendStack: ['ruby', 'rails', 'postgres'],
     imgSrc: clientWebsiteGif,
     imgAlt: 'client website gif',
-    handleGoToApp: handleGoToApp('https://caitlyn-marr-one-pager.netlify.app/'),
+    handleGoToApp: handleGoToApp('https://caitlyn-marr.netlify.app/'),
     handleGoToGithub: handleGoToGithub('https://github.com/Mikey-Esteban/caitlyn-marr-website')
   }
 
   const chessProps = {
     title: 'Chess',
     id: 'chess-app',
-    descriptionText1: "I started picking up chess during the pandemic after watching Netlix's The Queen's Gambit \
-    and figured it would be a great project to work on learning Object Oriented Programming principles and Unit Testing.",
-    descriptionText2: "I decided to build the UI and all the chess rules from scratch instead of using the myriad of wonderful chess libraries out \
-    so I can truly get a grasp of a relatively complicated project for me.",
-    descriptionText3: "All the UI and rules were built on React & Javascript. \
-    However the 'play best move' button is using a stockfish engine called through a Python Flask app I created. Lastly, \
+    descriptionText1: "A project to work on learning Object Oriented Programming principles and Unit Testing.",
+    descriptionText2: "UI and all the chess rules built from scratch.",
+    descriptionText3: "'play best move' button calls a Python Flask app to use a stockfish engine. Lastly, \
     I bought a Rasperry Pi microcomputer to host said Flask app.",
     frontendStack: ['html5', 'css', 'js', 'react'],
     backendStack: ['python', 'flask', 'raspberryPi'],
@@ -100,11 +194,14 @@ const Portfolio = () => {
 
   return (
     <Wrapper id="portfolio">
-      <Project props={clientWebsiteProps} />
-      <Project props={coffeeShopProps} />
-      <Project props={chessProps} />
-      <Project props={waldoProps} />
-      <Project props={weatherProps} />
+      <h1>Projects</h1>
+      <div id="portfolioWrapper">
+        <Project props={clientWebsiteProps} main={true}/>
+        <Project props={coffeeShopProps} main={true}/>
+        <Project props={chessProps} main={false}/>
+        <Project props={waldoProps} main={false}/>
+        <Project props={weatherProps} main={false}/>
+      </div>
     </Wrapper>
   );
 };
