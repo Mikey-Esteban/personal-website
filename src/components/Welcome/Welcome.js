@@ -41,6 +41,10 @@ const Wrapper = styled.div`
     font-size: 124px;
     letter-spacing: 8px;
     cursor: pointer;
+
+    @media only screen and (max-width: 480px) {
+      font-size: 80px;
+    }
   }
 
   #myName::before {
@@ -99,6 +103,12 @@ const Wrapper = styled.div`
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 1s linear;
+
+    @media only screen and (max-width: 480px) {
+      padding-right: 2rem;
+      left: 20%;
+      top: 60%;
+    }
   }
 
   #socials {

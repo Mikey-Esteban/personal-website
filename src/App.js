@@ -9,8 +9,7 @@ import {
   Main,
   Navbar,
   Burger,
-  Menu,
-  Footer
+  Menu
 } from './components'
 
 const Wrapper = styled.div`
@@ -23,23 +22,13 @@ const App = () => {
   const [ open, setOpen ] = useState()
   const [ isBurgerNavbar, setIsBurgerNavbar ] = useState()
   const [ showContactCTA, setShowContactCTA ] = useState()
-  const [ isNavbarFixed, setIsNavbarFixed ] = useState()
+  const [ isNavbarFixed, setIsNavbarFixed ] = useState(false)
   const [ navbarPosition, setNavbarPosition ] = useState()
 
-  const shouldRenderBurger = () => {
-    window.innerWidth < 800 ? setIsBurgerNavbar(true) : setIsBurgerNavbar(false)
-  }
-
-  const findHeightUntilWelcomeEnd = () => {
+  const findWelcomeHeight = () => {
     let welcome = document.querySelector('#home');
     return welcome.clientHeight
   }
-
-  const findBottomOfMyName = () => {
-    let bottom = document.querySelector('#myName').getBoundingClientRect().bottom
-    console.log('name bottom is', bottom);
-    setNavbarPosition(bottom + 150);
-  };
 
   const findHeightUntilContact = () => {
     let welcome = document.querySelector('#home');
@@ -47,28 +36,24 @@ const App = () => {
     let portfolio = document.querySelector('#portfolio');
     let contact = document.querySelector('#contact');
 
-    console.log('WHAT IS THE HEIGHT', welcome.clientHeight + about.clientHeight + portfolio.clientHeight - contact.clientHeight);
-
     return welcome.clientHeight + about.clientHeight + portfolio.clientHeight - contact.clientHeight
   }
 
   const shouldRepositionNavbar = () => {
-    let welcomeHeight = document.querySelector('#home').clientHeight;
     let scrollPos = window.scrollY
-    let navTop = document.querySelector('#navbar').getBoundingClientRect().top
-    // if top is < than 20
-    if (navTop < 20 && (welcomeHeight < scrollPos + 275)) {
-      console.log('CHANGING NAVBAR FIXED TO TRUE');
+
+    // changing from positioned to fixed
+    if (scrollPos > 550) {
       setIsNavbarFixed(true)
-    } else {
-      console.log('CHANGING NAVBAR FIXED TO False');
+    // changing from fixed to positioned
+  } else {
+      setNavbarPosition(findWelcomeHeight() - 250);
       setIsNavbarFixed(false)
     }
   }
 
   const shouldShowContactCTA = () => {
     if (window.scrollY >= findHeightUntilContact()) {
-      console.log('YAY IM GONNA SHOW');
       setShowContactCTA(true)
     } else {
       setShowContactCTA(false)
@@ -76,17 +61,13 @@ const App = () => {
   }
 
   useEffect(() => {
-    // check to see if burger or not
-    // shouldRenderBurger()
     shouldShowContactCTA()
     shouldRepositionNavbar()
-    findBottomOfMyName()
-    // window.addEventListener('resize', shouldRenderBurger)
-    // set height for showing contact
-    window.addEventListener('resize', findHeightUntilContact)
+    setNavbarPosition(findWelcomeHeight() - 250);
+
+    // add scroll listener
     window.addEventListener('scroll', shouldShowContactCTA)
     window.addEventListener('scroll', shouldRepositionNavbar)
-    window.addEventListener('resize', findBottomOfMyName)
 
   }, [])
 

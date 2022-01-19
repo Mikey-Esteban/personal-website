@@ -103,8 +103,8 @@ const Wrapper = styled.div`
 
   #socials {
     position: absolute;
-    bottom: -75px;
-    width: 120px;
+    bottom: -90px;
+    width: 130px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 4rem;
@@ -158,9 +158,9 @@ const CTA = () => {
           </div>
         </div>
         <div id="socials">
-          <Github className="icon" color={'white'} size={36} onClick={() => window.open('https://github.com/Mikey-Esteban')}/>
-          <Linkedin className="icon" color={'white'} size={36} onClick={() => window.open('https://www.linkedin.com/in/michael-esteban-49285368/')}/>
-          <Mail className="icon" color={'white'} size={36} onClick={() => window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=michaelp.esteban@gmail.com')}/>
+          <Github className="icon" color={'white'} size={40} onClick={() => window.open('https://github.com/Mikey-Esteban')}/>
+          <Linkedin className="icon" color={'white'} size={40} onClick={() => window.open('https://www.linkedin.com/in/michael-esteban-49285368/')}/>
+          <Mail className="icon" color={'white'} size={40} onClick={() => window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=michaelp.esteban@gmail.com')}/>
         </div>
       </div>
     </Wrapper>

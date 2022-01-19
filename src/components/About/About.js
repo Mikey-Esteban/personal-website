@@ -54,7 +54,7 @@ const Wrapper = styled.div`
 const SectionWrapper = styled.div`
   padding: 0 4rem;
   max-width: 1000px;
-  min-width: 400px;
+  min-width: 300px;
   margin: 0 auto;
 
   #iLoveCreating {
@@ -73,7 +73,7 @@ const SectionWrapper = styled.div`
 
   @media only screen and (max-width: 425px) {
     margin: 0;
-    width: 380px;
+    width: 320px;
     font-size: .9rem;
 
     p {

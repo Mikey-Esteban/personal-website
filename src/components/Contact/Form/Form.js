@@ -20,6 +20,10 @@ const StyledForm = styled.form`
     border-bottom: 1px solid white;
     color: white;
     font-family: "Poppins", sans-serif;
+
+    @media only screen and (max-width: 425px) {
+      width: 100%;
+    }
   }
 
   input:focus, textarea:focus {
