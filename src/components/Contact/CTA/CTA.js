@@ -124,10 +124,10 @@ const Wrapper = styled.div`
       margin: 0;
     }
 
-    @media only screen and (max-width: 900px) {
-      font-size: 2.5vmin;
+    @media only screen and (max-width: 1000px) {
+      font-size: 2vmin;
     }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 600px) {
       font-size: 2.8vmin;
     }
   }

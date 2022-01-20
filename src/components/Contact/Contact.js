@@ -9,9 +9,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     flex-direction: column;
-    gap: 5rem;
+    gap: 7rem;
     align-items: center;
   }
 `

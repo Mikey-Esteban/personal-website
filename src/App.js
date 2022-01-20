@@ -43,17 +43,19 @@ const App = () => {
     let scrollPos = window.scrollY
 
     // changing from positioned to fixed
-    if (scrollPos > 550) {
+    if (scrollPos > (findWelcomeHeight() - (findWelcomeHeight() / 4))) {
       setIsNavbarFixed(true)
     // changing from fixed to positioned
   } else {
-      setNavbarPosition(findWelcomeHeight() - 250);
+      setNavbarPosition(findWelcomeHeight() - (findWelcomeHeight() / 4));
       setIsNavbarFixed(false)
     }
   }
 
   const shouldShowContactCTA = () => {
-    if (window.scrollY >= findHeightUntilContact()) {
+    // if full page is viewed
+    let hasVertScroll = document.body.scrollHeight > document.body.clientHeight
+    if (window.scrollY >= findHeightUntilContact() || !hasVertScroll) {
       setShowContactCTA(true)
     } else {
       setShowContactCTA(false)
@@ -63,11 +65,13 @@ const App = () => {
   useEffect(() => {
     shouldShowContactCTA()
     shouldRepositionNavbar()
-    setNavbarPosition(findWelcomeHeight() - 250);
+    setNavbarPosition(findWelcomeHeight() - (findWelcomeHeight() / 4));
 
     // add scroll listener
     window.addEventListener('scroll', shouldShowContactCTA)
     window.addEventListener('scroll', shouldRepositionNavbar)
+    window.addEventListener('resize', shouldRepositionNavbar)
+    window.addEventListener('resize', shouldShowContactCTA)
 
   }, [])
 
